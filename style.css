@@ -70,7 +70,7 @@ section {
         0 0 1px #8a00c4,
         0 0 4px #8a00c4;
     font-weight: bold;
-    animation: neonGlow 2250ms infinite alternate;
+    animation: neonGlow 3250ms infinite alternate;
     -webkit-text-stroke: 1px #242424; /* helps stay visible */
     
 }
