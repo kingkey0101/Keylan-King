@@ -6,7 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/06e59cf638.js" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
     <title>Keylan King</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init({
+                publicKey: "_qQYPXY0XDM6bdQKc",
+            });
+        })();
+    </script>
 </head>
 
 <body>
@@ -17,7 +27,7 @@
                 <img id="personal-logo" src="./assets/kk logo2.png" alt="">
             </figure>
             <ul class="nav__link--list">
-                <li class="nav__link">
+                <li class="nav__link" onclick="toggleModal()">
                     <a href="#" class="nav__link--anchor
                     link__hover-effect
                     link__hover-effect--black">About</a>
@@ -32,7 +42,7 @@
                     link__hover-effect
                     link__hover-effect--black">Contact</a>
                 </li>
-                <li class="nav__link click">
+                <li class="nav__link click" onclick="toggleContrast()">
                     <a href="#" class="nav__link--anchor
                     link__hover-effect
                     link__hover-effect--black"><i class="fa-solid fa-circle-half-stroke"></i></a>
@@ -44,10 +54,11 @@
             <div class="header__content">
                 <h1 class="title">Hello</h1>
                 <h1 class="title purple--text">I'm Keylan King</h1>
-                <p class="header__para">A <b class="purple--text">Frontend Developer</b> who loves to build web applications
+                <p class="header__para">A <b class="purple--text">Frontend Developer</b> who loves to build web
+                    applications
                     with great UI/UX
                     <br>
-                    Here's a bit more <b class="purple">about me.</b>
+                    Here's a bit more <b class="purple--text click" onclick="toggleModal()">about me.</b>
                 </p>
                 <div class="social__list">
                     <a href="https://www.linkedin.com/in/keylan-king-12116835a/" target="_blank"
@@ -63,13 +74,78 @@
                 </div>
             </div>
         </header>
-        <button class="mail__btn click">
+        <button class="mail__btn click" onclick="toggleModal()">
             <i class="fa-duotone fa-solid fa-envelope"></i>
         </button>
         <!-- projects -->
         <a href="Projects" class="scroll">
             <div class="scroll__icon click"></div>
         </a>
+        <!-- modal -->
+        <div class="modal">
+            <div class="modal__half modal__about">
+                <h3 class="modal__title modal__title--about">Here's a bit about me</h3>
+                <h4 class="modal__sub-title modal__sub-title--about">Aspiring Front-End Developer</h4>
+                <p class="modal__para">
+                    <br>
+                    I am a motivated and fast-learning <b class="purple">frontend developer</b> with a passion for great
+                    UI/UX.
+                    <br>
+                    Currently completing an intensive 4-month
+                    coding bootcamp focused on HTML, CSS, JavaScript, and React.
+                    <br>
+                    <b class="purple">I love shipping code</b>, learning quickly through hands-on experience and <b
+                        class="purple">taking initiative</b>
+                    <br>
+                    Proven ability building <b class="purple">responsive</b>, accessible websites and web applications.
+                </p>
+                <div class="modal__languages">
+                    <figure class="modal__language">
+                        <img class="modal__language--img" src="./assets/icons8-html-5-48.png" alt="">
+                        <span class="language__name">HTML</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img class="modal__language--img" src="./assets/icons8-css-logo-48 (1).png" alt="">
+                        <span class="language__name">CSS</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img class="modal__language--img" src="./assets/icons8-javascript-48.png" alt="">
+                        <span class="language__name">JavaScript</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img class="modal__language--img" src="./assets/icons8-react-40.png" alt="">
+                        <span class="language__name">React</span>
+                    </figure>
+                </div>
+
+            </div>
+            <div class="modal__half modal__contact">
+                <i class="fa-solid fa-xmark modal__exit click" onclick="toggleModal()"></i>
+                <h3 class="modal__title modal__title--contact">Lets connect!</h3>
+                <h4 class="modal__sub-title modal__sub-title--contact">I'd love to hear from you. </h4>
+                <form id="contact__form" onsubmit="contact(event)">
+                    <div class="form__item">
+                        <label class="form__item--label">Name</label>
+                        <input class="input" name="user_name" type="text" required></input>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__item--label">Email</label>
+                        <input class="input" name="user_email" type="email" required></input>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__item--label">Message</label>
+                        <textarea class="input" name="message" type="text" required></textarea>
+                    </div>
+                    <button id="contact__submit" class="form__submit ">Send it my way</button>
+                </form>
+                <div class="modal__overlay modal__overlay--loading">
+                    <i class="fa-solid fa-gear"></i>
+                </div>
+                <div class="modal__overlay modal__overlay--success">
+                    Thanks for the message! Looking forward to speaking to you soon.
+                </div>
+            </div>
+        </div>
     </section>
     <section id="Projects">
         <div class="container">
@@ -169,26 +245,26 @@
     <footer>
         <div class="container">
             <div class="row footer__row">
-
-
                 <figure>
                     <img class="footer__logo--img" src="./assets/kk logo3.png" alt="">
                 </figure>
                 <div class="footer__social--lists">
-                    <a href="" class="footer__social--link
-                link__hover--effect--white
+                    <a href="" class="
+                footer__social--link 
+                link__hover-effect
+                link__hover-effect--white
                 ">
                         GitHub </a>
-                    <a href="" class="footer__social--link
-                link__hover--effect--white
+                    <a href="https://github.com/kingkey0101" target="_blank" class="footer__social--link link__hover-effect
+                link__hover-effect--white
                 ">
                         LinkedIn </a>
-                    <a href="" class="footer__social--link
-                link__hover--effect--white
+                    <a href="https://www.linkedin.com/in/keylan-king-12116835a/" target="_blank" class="footer__social--link link__hover-effect
+                link__hover-effect--white
                 ">
                         Contact</a>
-                    <a href="" class="footer__social--link
-                link__hover--effect--white
+                    <a href="" target="_blank" class="footer__social--link link__hover-effect
+                link__hover-effect--white
                 ">
                         Resume</a>
                 </div>
