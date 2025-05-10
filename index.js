@@ -1,20 +1,28 @@
-// template_zd2netu => template id
-// service_leze6mo => service id
-// _qQYPXY0XDM6bdQKc => user id
 let isModalOpen = false;
 let contrastToggle = false;
+const scaleFactor = 1 / 20;
 
-function toggleContrast(){
-    contrastToggle = !contrastToggle;
-    if(contrastToggle) {
-    document.body.classList += ' dark-theme'
-    }
+// mouse tracking
+function moveBackground(event) {
+  const shapes = document.querySelectorAll(".shape");
+  const x = event.clientX * scaleFactor; //so mouse doesnt move imgs across whole screen
+  const y = event.clientY * scaleFactor;
 
-    else{
-        document.body.classList.remove('dark-theme')
-    }
+  for (let i = 0; i < shapes.length; ++i) {
+    const isOdd = i % 2 !== 0;
+    const boolInt = isOdd ? -1 : 1;
+    shapes[i].style.transform = `translate(${x * boolInt}px, ${y * boolInt}px)`;
+  }
 }
 
+function toggleContrast() {
+  contrastToggle = !contrastToggle;
+  if (contrastToggle) {
+    document.body.classList += " dark-theme";
+  } else {
+    document.body.classList.remove("dark-theme");
+  }
+}
 
 // promise:(async)
 function contact(event) {

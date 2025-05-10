@@ -20,7 +20,7 @@
 </head>
 
 <body>
-    <section id="landing-page">
+    <section id="landing-page" onmousemove="moveBackground(event)">
         <!-- nav -->
         <nav>
             <figure>
@@ -38,7 +38,7 @@
                     link__hover-effect--black">Projects</a>
                 </li>
                 <li class="nav__link">
-                    <a href="#" class="nav__link--anchor
+                    <a href="#About" onclick="toggleModal()" class="nav__link--anchor
                     link__hover-effect
                     link__hover-effect--black">Contact</a>
                 </li>
@@ -68,17 +68,19 @@
                     <a href="https://github.com/kingkey0101" target="_blank]" class="social__link click">
                         <i class="fa-brands fa-github"></i>
                     </a>
-                    <a href="./assets/Keylan King Resume.pdf" target="_blank" class="social__link click">
+                    <a href="./assets/Keylan-King Resume LinkedIn.pdf" target="_blank" class="social__link click">
                         <i class="fa-sharp-duotone fa-regular fa-file-pdf"></i>
                     </a>
                 </div>
             </div>
         </header>
-        <button class="mail__btn click" onclick="toggleModal()">
-            <i class="fa-duotone fa-solid fa-envelope"></i>
-        </button>
+        <a href="#">
+            <button class="mail__btn click" onclick="toggleModal()">
+                <i class="fa-duotone fa-solid fa-envelope"></i>
+            </button>
+        </a>
         <!-- projects -->
-        <a href="Projects" class="scroll">
+        <a href="#Projects" class="scroll">
             <div class="scroll__icon click"></div>
         </a>
         <!-- modal -->
@@ -146,6 +148,16 @@
                 </div>
             </div>
         </div>
+        <!-- event listeners-mouse -->
+        <img src="./assets/Messaging-Crown-icon.png" class="shape shape--0">
+        <img src="./assets/gear-2-16.png" class="shape shape--1">
+        <img src="./assets/Sensibleworld-Starwars-Lightsaber-Green.svg" class="shape shape--2">
+        <img src="./assets/Lightsaber-Red-icon.png" class="shape shape--3">
+        <img src="./assets/Millennium-Falcon-icon.png" class="shape shape--4">
+        <img src="./assets/Lightsaber-Red-icon.png" class="shape shape--5">
+        <img src="./assets/Sensibleworld-Starwars-Lightsaber-Green.svg" class="shape shape--6">
+        <img src="./assets/Messaging-Crown-icon.png" class="shape shape--7">
+        <img src="./assets/Millennium-Falcon-icon.png" class="shape shape--8">
     </section>
     <section id="Projects">
         <div class="container">
@@ -157,7 +169,7 @@
                     <!-- project 1 -->
                     <li class="project">
                         <div class="project__wrapper">
-                            <img src="./assets/background-collage.jpg" class="project__img" alt="">
+                            <img src="./assets/Screenshot (10).png" class="project__img" alt="">
                             <div class="project__wrapper--bg"></div>
                             <div class="project__description">
                                 <h3 class="project__description--title">Website Rebuild</h3>
@@ -185,7 +197,7 @@
                     <!-- project 2 -->
                     <li class="project">
                         <div class="project__wrapper">
-                            <img src="./assets/background-collage.jpg" class="project__img" alt="">
+                            <img src="./assets/Screenshot (24).png" class="project__img" alt="">
                             <div class="project__wrapper--bg"></div>
                             <div class="project__description">
                                 <h3 class="project__description--title">Weather App</h3>
@@ -212,24 +224,22 @@
                     <!-- project 3 -->
                     <li class="project">
                         <div class="project__wrapper">
-                            <img src="./assets/background-collage.jpg" class="project__img" alt="">
+                            <img src="./assets/Screenshot (23).png" class="project__img" alt="">
                             <div class="project__wrapper--bg"></div>
                             <div class="project__description">
                                 <a href=""></a>
-                                <h3 class="project__description--title">🎬 FlickFinder (In Progress)
+                                <h3 class="project__description--title"> E-commerce Library site project(in progress)
                                 </h3>
                                 <h4 class="project__description--sub-title">
                                     HTML, CSS, JavaScript, React
                                 </h4>
-                                <p class="project__description--para">A movie and TV search app using The Movie DB API
-                                    to explore trending and search results in
-                                    real time.</p>
+                                <p class="project__description--para">Building an online library/bookstore, adding price fetching and JavaScript(coming soon)</p>
                                 <div class="project__description--links">
-                                    <a href="https://github.com/kingkey0101/Flickfinder-Build" target="_blank"
+                                    <a href="https://github.com/kingkey0101/E-Commerce-project" target="_blank"
                                         class="project__description--link">
                                         <i class="fa-brands fa-github"></i>
                                     </a>
-                                    <a href="https://kingkey0101.github.io/Flickfinder-Build/" target="_blank"
+                                    <a href="https://kingkey0101.github.io/E-Commerce-project/" target="_blank"
                                         class="project__description--link">
                                         <i class="fa-sharp-duotone fa-solid fa-link"></i>
                                     </a>
@@ -246,24 +256,26 @@
         <div class="container">
             <div class="row footer__row">
                 <figure>
+                    <a href="#">
                     <img class="footer__logo--img" src="./assets/kk logo3.png" alt="">
+                     </a>
                 </figure>
                 <div class="footer__social--lists">
-                    <a href="" class="
+                    <a href="https://github.com/kingkey0101" target="_blank" class="
                 footer__social--link 
                 link__hover-effect
                 link__hover-effect--white
                 ">
                         GitHub </a>
-                    <a href="https://github.com/kingkey0101" target="_blank" class="footer__social--link link__hover-effect
-                link__hover-effect--white
-                ">
-                        LinkedIn </a>
                     <a href="https://www.linkedin.com/in/keylan-king-12116835a/" target="_blank" class="footer__social--link link__hover-effect
                 link__hover-effect--white
                 ">
+                        LinkedIn </a>
+                    <a href="#" onclick="toggleModal()" class="footer__social--link link__hover-effect
+                link__hover-effect--white
+                ">
                         Contact</a>
-                    <a href="" target="_blank" class="footer__social--link link__hover-effect
+                    <a href="./assets/Keylan-King Resume LinkedIn.pdf" target="_blank" class="footer__social--link link__hover-effect
                 link__hover-effect--white
                 ">
                         Resume</a>
